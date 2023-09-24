@@ -28,6 +28,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
+// Zod form schema
 const formSchema = z.object({
   name: z.string().min(1, {
     message: "Server name is required."
