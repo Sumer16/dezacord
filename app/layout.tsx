@@ -1,10 +1,17 @@
+// Global CSS
 import "./globals.css"
+
+// NextJS packages
 import type { Metadata } from "next"
 import { Open_Sans } from "next/font/google"
 
+// Clerk
 import { ClerkProvider } from "@clerk/nextjs"
 
+// Components
 import { ThemeProvider } from "@/components/providers/theme-provider"
+
+// Lib files
 import { cn } from "@/lib/utils"
 
 const font = Open_Sans({ subsets: ['latin'] })

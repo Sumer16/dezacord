@@ -1,5 +1,7 @@
+// Clerk packages
 import { currentUser, redirectToSignIn } from "@clerk/nextjs"
 
+// Lib files
 import { db } from "@/lib/db"
 
 export const initialProfile = async () => {
