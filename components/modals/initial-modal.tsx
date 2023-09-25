@@ -45,6 +45,7 @@ const formSchema = z.object({
   })
 })
 
+// This can only be used for Initial server setup
 export const InitialModal = () => {
   const [ isMounted, setIsMounted ] = useState(false)
 

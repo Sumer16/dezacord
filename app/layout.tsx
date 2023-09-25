@@ -5,11 +5,10 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Open_Sans } from "next/font/google"
 
-// Clerk
-import { ClerkProvider } from "@clerk/nextjs"
-
-// Components
-import { ThemeProvider } from "@/components/providers/theme-provider"
+// Providers
+import { ClerkProvider } from "@clerk/nextjs" // Clerk
+import { ThemeProvider } from "@/components/providers/theme-provider" // Theme
+import { ModalProvider } from "@/components/providers/modal-provider" // Modal
 
 // Lib files
 import { cn } from "@/lib/utils"
@@ -36,6 +35,7 @@ export default function RootLayout({
             enableSystem={false}
             storageKey="dezacord-theme"
           >
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </body>
