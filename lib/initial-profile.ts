@@ -4,6 +4,7 @@ import { currentUser, redirectToSignIn } from "@clerk/nextjs"
 // Lib files
 import { db } from "@/lib/db"
 
+// If user not present in DB then redirect to sign up or sign in
 export const initialProfile = async () => {
   const user = await currentUser()
 

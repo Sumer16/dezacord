@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+// Dark, Light & System mode by shadCN UI
 export function ModeToggle() {
   const { setTheme } = useTheme()
 

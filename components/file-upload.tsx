@@ -16,6 +16,7 @@ interface FileUploadProps {
   endpoint: "messageFile" | "serverImage"
 }
 
+// File Upload component in server creation modal
 export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
   const fileType = value?.split(".").pop()
 

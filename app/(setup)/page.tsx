@@ -8,6 +8,7 @@ import { InitialModal } from "@/components/modals/initial-modal"
 import { db } from "@/lib/db"
 import { initialProfile } from "@/lib/initial-profile"
 
+// Setup page for server if no server assigned to user, redirect to Initial setup of server
 const SetupPage = async () => {
   const profile = await initialProfile()
 
