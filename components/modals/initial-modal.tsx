@@ -4,9 +4,15 @@
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 
+// NextJS packages
+import { useRouter } from "next/navigation"
+
 // Zod library
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+
+// Axios
+import axios from "axios"
 
 // Components
 import { 
@@ -42,6 +48,8 @@ const formSchema = z.object({
 export const InitialModal = () => {
   const [ isMounted, setIsMounted ] = useState(false)
 
+  const router = useRouter()
+
   useEffect(() => {
     setIsMounted(true)
   }, [])
@@ -59,7 +67,15 @@ export const InitialModal = () => {
 
   // Custom form submit
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values)
+    try { 
+      await axios.post("/api/servers", values)
+
+      form.reset()
+      router.refresh()
+      window.location.reload()
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   if (!isMounted) {
@@ -97,7 +113,6 @@ export const InitialModal = () => {
                   )}
                 />
               </div>
-
               <FormField
                 control={form.control}
                 name="name"
