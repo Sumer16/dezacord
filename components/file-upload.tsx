@@ -4,9 +4,6 @@
 import { X } from "lucide-react"
 import Image from "next/image"
 
-// uploadthing
-import "@uploadthing/react/styles.css"
-
 // Lib file - custom file rather than internal package
 import { UploadDropzone } from "@/lib/uploadthing"
 
