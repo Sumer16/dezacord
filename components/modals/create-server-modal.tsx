@@ -9,11 +9,9 @@ import { useModal } from "@/hooks/use-model-store"
 // NextJS packages
 import { useRouter } from "next/navigation"
 
-// Zod library
+// Libraries
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-
-// Axios
 import axios from "axios"
 
 // Components
