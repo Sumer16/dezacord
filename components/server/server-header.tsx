@@ -1,5 +1,8 @@
 "use client"
 
+// Custom hooks
+import { useModal } from "@/hooks/use-model-store"
+
 // Custom type check for server prop since the type doesn't existing in Prisma Server model as its custom-made by us
 import { ServerWithMembersWithProfiles } from "@/types"
 
@@ -33,6 +36,8 @@ interface ServerHeaderProps {
 
 // Server Header for server sidebar
 export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
+  const { onOpen } = useModal()
+  
   const isAdmin = role === MemberRole.ADMIN
   const isModerator = isAdmin || role === MemberRole.MODERATOR
 
@@ -52,6 +57,7 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
       >
         {isModerator && (
           <DropdownMenuItem
+            onClick={() => onOpen("invite", { server })}
             className="text-indigo-600 dark:text-indigo-400 px-3 py-2 text-sm cursor-pointer"
           >
             Invite People

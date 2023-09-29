@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 
 // Components
 import { CreateServerModal } from "@/components/modals/create-server-modal"
+import { InviteModal } from "@/components/modals/invite-modal"
 
 // This is return a Fragment and here we will render all our modals
 export const ModalProvider = () => {
@@ -22,6 +23,7 @@ export const ModalProvider = () => {
   return (
     <>
       <CreateServerModal />
+      <InviteModal />
     </>
   )
 }
