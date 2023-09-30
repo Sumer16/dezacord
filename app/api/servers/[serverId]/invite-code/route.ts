@@ -20,7 +20,7 @@ export async function PATCH(
     }
 
     if (!params.serverId) {
-      return new NextResponse("Server ID missing,", { status: 400 })
+      return new NextResponse("Server ID missing.", { status: 400 })
     }
 
     // This request can only be executed by an admin
