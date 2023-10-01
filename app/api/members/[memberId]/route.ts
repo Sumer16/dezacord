@@ -66,7 +66,7 @@ export async function DELETE(
 // Update the role of the users in the server by admin
 export async function PATCH(
   req: Request,
-  { params }: { params: { memberId: string } }
+  { params }: { params: { memberId: string }}
 ) {
   try {
     const profile = await currentProfile()
