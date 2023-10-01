@@ -9,6 +9,7 @@ import { InviteModal } from "@/components/modals/invite-modal"
 import { EditServerModal } from "@/components/modals/edit-server-modal"
 import { MembersModal } from "@/components/modals/members-modal"
 import { CreateChannelModal } from "@/components/modals/create-channel-modal"
+import { LeaveServerModal } from "@/components/modals/leave-server-modal"
 
 // This is return a Fragment and here we will render all our modals
 export const ModalProvider = () => {
@@ -30,6 +31,7 @@ export const ModalProvider = () => {
       <EditServerModal />
       <MembersModal />
       <CreateChannelModal />
+      <LeaveServerModal />
     </>
   )
 }
