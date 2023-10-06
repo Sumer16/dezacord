@@ -1,6 +1,7 @@
 "use client"
 
 // React packages
+import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 
 // Custom hooks
@@ -43,7 +44,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { useEffect } from "react"
 
 // Zod form schema
 const formSchema = z.object({

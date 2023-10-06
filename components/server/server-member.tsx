@@ -1,5 +1,8 @@
 "use client"
 
+// NextJS packages
+import { useParams, useRouter } from "next/navigation"
+
 // Lib files
 import { cn } from "@/lib/utils"
 
@@ -11,7 +14,6 @@ import { UserAvatar } from "@/components/user-avatar"
 
 // Icons
 import { ShieldAlert, ShieldCheck } from "lucide-react"
-import { useParams, useRouter } from "next/navigation"
 
 interface ServerMemberProps {
   member: Member & { profile: Profile }
