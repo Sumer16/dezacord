@@ -43,6 +43,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useEffect } from "react"
 
 // Zod form schema
 const formSchema = z.object({
@@ -59,19 +60,28 @@ const formSchema = z.object({
 
 // Creating new channel in an existing server by the admin
 export const CreateChannelModal = () => {
-  const { isOpen, onClose, type } = useModal()
+  const { isOpen, onClose, type, data } = useModal()
   const router = useRouter()
   const params = useParams()
 
   const isModalOpen = isOpen && type === "createChannel"
+  const { channelType } = data
 
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      type: ChannelType.TEXT, // Default value will be TEXT and then the user can change its type
+      type: channelType || ChannelType.TEXT, // Default value will be TEXT and then the user can change its type
     }
   })
+
+  useEffect(() => {
+    if (channelType) {
+      form.setValue("type", channelType)
+    } else {
+      form.setValue("type", ChannelType.TEXT)
+    }
+  }, [channelType, form])
 
   // Custom loader
   const isLoading  = form.formState.isSubmitting
