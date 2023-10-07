@@ -1,7 +1,7 @@
 // NextJS packages
 import { NextResponse } from "next/server"
 
-// UUID
+// Libraries
 import { v4 as uuidv4} from "uuid"
 
 // Prisma packages - name (MemberRole) imported from our schema
