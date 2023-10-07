@@ -1,4 +1,4 @@
-// Clerk packages
+// Clerk
 import { currentUser, redirectToSignIn } from "@clerk/nextjs"
 
 // Lib files
