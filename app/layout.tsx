@@ -9,6 +9,7 @@ import { Open_Sans } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs" // Clerk
 import { ThemeProvider } from "@/components/providers/theme-provider" // Theme
 import { ModalProvider } from "@/components/providers/modal-provider" // Modal
+import { SocketProvider } from "@/components/providers/socket-provider" // Socket
 
 // Lib files
 import { cn } from "@/lib/utils"
@@ -36,8 +37,10 @@ export default function RootLayout({
             enableSystem={false}
             storageKey="dezacord-theme"
           >
-            <ModalProvider />
-            {children}
+            <SocketProvider>
+              <ModalProvider />
+              {children}
+            </SocketProvider>
           </ThemeProvider>
         </body>
       </html>
