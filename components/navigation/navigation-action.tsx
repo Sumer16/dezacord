@@ -3,7 +3,7 @@
 // React packages
 import { Plus } from "lucide-react"
 
-// Custom hook
+// Custom hooks
 import { useModal } from "@/hooks/use-model-store"
 
 // Components

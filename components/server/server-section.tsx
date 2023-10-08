@@ -1,6 +1,6 @@
 "use client"
 
-// Custom Hooks
+// Custom hooks
 import { useModal } from "@/hooks/use-model-store"
 
 // Custom types
