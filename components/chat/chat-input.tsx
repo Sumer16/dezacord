@@ -57,14 +57,14 @@ export const ChatInput = ({
       const url = qs.stringifyUrl({
         url: apiUrl,
         query,
-      });
+      })
 
-      await axios.post(url, values);
+      await axios.post(url, values)
 
-      form.reset();
-      router.refresh();
+      form.reset()
+      router.refresh()
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
 
