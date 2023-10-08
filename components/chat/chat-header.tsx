@@ -13,6 +13,7 @@ interface ChatHeaderProps {
   imageUrl?: string
 }
 
+// Chat Header
 export const ChatHeader = ({ 
   serverId, 
   name, 

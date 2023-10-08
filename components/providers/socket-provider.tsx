@@ -27,6 +27,7 @@ export const useSocket = () => {
   return useContext(SocketContext)
 }
 
+// Providing SocketIO connection for conversations
 export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
   const [ socket, setSocket ] = useState(null)
   const [ isConnected , setIsConnected ] = useState(false)

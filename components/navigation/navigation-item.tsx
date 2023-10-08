@@ -16,6 +16,7 @@ interface NavigationItemProps {
   name: string
 }
 
+// Different Servers in NavBar
 export const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
   const params = useParams()
   const router = useRouter()

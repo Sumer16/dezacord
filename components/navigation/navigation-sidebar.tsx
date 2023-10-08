@@ -17,7 +17,7 @@ import { Separator } from "@/components/ui/separator"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { ModeToggle } from "@/components/mode-toggle"
 
-// This is a server component
+// This is a server component for Navigation between servers
 export const NavigationSidebar = async () => {
   const profile = await currentProfile()
 

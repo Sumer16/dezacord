@@ -14,7 +14,7 @@ import { CreateChannelModal } from "@/components/modals/create-channel-modal"
 import { EditChannelModal } from "@/components/modals/edit-channel-modal"
 import { DeleteChannelModal } from "@/components/modals/delete-channel-modal"
 
-// This is return a Fragment and here we will render all our modals
+// This will return a Fragment and here we will render all our modals
 export const ModalProvider = () => {
   // Preventing the modals to be rendered on server side coz that can cause inconsistency, thus creating Hydration errors.
   const [ isMounted, setIsMounted ] = useState(false)

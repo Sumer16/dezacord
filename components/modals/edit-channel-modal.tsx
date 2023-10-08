@@ -58,7 +58,7 @@ const formSchema = z.object({
   type: z.nativeEnum(ChannelType)
 })
 
-// Creating new channel in an existing server by the admin
+// Editing channel in an existing server by the admin
 export const EditChannelModal = () => {
   const { isOpen, onClose, type, data } = useModal()
   const router = useRouter()

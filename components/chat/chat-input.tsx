@@ -35,6 +35,7 @@ const formSchema = z.object({
   content: z.string().min(1),
 })
 
+// Chat Input field
 export const ChatInput = ({ 
   apiUrl, 
   query, 
