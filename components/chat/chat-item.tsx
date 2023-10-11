@@ -72,7 +72,6 @@ export const ChatItem = ({
   socketQuery,
 }: ChatItemProps) => {
   const [ isEditing, setIsEditing ] = useState(false)
-  const [ isDeleting, setIsDeleting ] = useState(false)
 
   useEffect(() => {
     const handleKeyDown = (event: any) => {
