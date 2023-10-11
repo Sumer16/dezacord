@@ -5,6 +5,7 @@ import { Fragment } from "react"
 
 // Custom hooks
 import { useChatQuery } from "@/hooks/use-chat-query"
+import { useChatSocket } from "@/hooks/use-chat-socket"
 
 // Folder Components
 import { ChatWelcome } from "./chat-welcome"
@@ -53,6 +54,8 @@ export const ChatMessages = ({
   type
 }: ChatMessagesProps) => {
   const queryKey = `chat:${chatId}`
+  const addKey = `chat:${chatId}:messages`;
+  const updateKey = `chat:${chatId}:messages:update`
 
   const {
     data,
@@ -66,6 +69,7 @@ export const ChatMessages = ({
     paramKey,
     paramValue,
   })
+  useChatSocket({ queryKey, addKey, updateKey });
 
   if (status === "loading") {
     return (
