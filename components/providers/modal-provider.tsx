@@ -14,6 +14,7 @@ import { CreateChannelModal } from "@/components/modals/create-channel-modal"
 import { EditChannelModal } from "@/components/modals/edit-channel-modal"
 import { DeleteChannelModal } from "@/components/modals/delete-channel-modal"
 import { MessageFileModal } from "@/components/modals/message-file-modal"
+import { DeleteMessageModal } from "@/components/modals/delete-message-modal"
 
 // This will return a Fragment and here we will render all our modals
 export const ModalProvider = () => {
@@ -40,6 +41,7 @@ export const ModalProvider = () => {
       <EditChannelModal />
       <DeleteChannelModal />
       <MessageFileModal />
+      <DeleteMessageModal />
     </>
   )
 }
