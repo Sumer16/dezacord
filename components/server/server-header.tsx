@@ -3,7 +3,7 @@
 // Custom hooks
 import { useModal } from "@/hooks/use-model-store"
 
-// Custom type check for server prop since the type doesn't existing in Prisma Server model as its custom-made by us
+// Custom types check for server prop since the type doesn't existing in Prisma Server model as its custom-made by us
 import { ServerWithMembersWithProfiles } from "@/types"
 
 // Prisma packages

@@ -7,7 +7,7 @@ import { Server as NetServer } from "http"
 // SocketIO
 import { Server as ServerIO } from "socket.io"
 
-// Custom type
+// Custom types
 import { NextApiResponseServerIo } from "@/types"
 
 // Turn off body parser for this route
