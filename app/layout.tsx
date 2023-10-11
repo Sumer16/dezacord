@@ -10,6 +10,7 @@ import { ClerkProvider } from "@clerk/nextjs" // Clerk
 import { ThemeProvider } from "@/components/providers/theme-provider" // Theme
 import { ModalProvider } from "@/components/providers/modal-provider" // Modal
 import { SocketProvider } from "@/components/providers/socket-provider" // Socket
+import { QueryProvider } from "@/components/providers/query-provider" // Query
 
 // Lib files
 import { cn } from "@/lib/utils"
@@ -18,7 +19,7 @@ const font = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Dezacord | A Discord Clone',
-  description: 'This is a Dezacord application, a clone of the discord website developed using NextJS 13.4',
+  description: 'Dezacord application is a clone of the discord website developed using NextJS 13.4, Tailwind, SocketIO & MySQl',
 }
 
 export default function RootLayout({
@@ -39,7 +40,9 @@ export default function RootLayout({
           >
             <SocketProvider>
               <ModalProvider />
-              {children}
+              <QueryProvider>
+                {children}
+              </QueryProvider>
             </SocketProvider>
           </ThemeProvider>
         </body>
