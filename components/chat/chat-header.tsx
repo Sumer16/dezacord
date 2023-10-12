@@ -2,6 +2,9 @@
 import { MobileToggle } from "@/components/mobile-toggle"
 import { SocketIndicator } from "@/components/socket-indicator"
 
+// Folder Components
+import { ChatVideoButton } from "./chat-video-button"
+
 // Icons
 import { Hash } from "lucide-react"
 import { UserAvatar } from "../user-avatar"
@@ -36,6 +39,9 @@ export const ChatHeader = ({
         {name}
       </p>
       <div className="ml-auto flex items-center">
+        {type === "conversation" && (
+          <ChatVideoButton />
+        )}
         <SocketIndicator />
       </div>
     </div>
