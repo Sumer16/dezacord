@@ -82,9 +82,11 @@ export const ChatItem = ({
   const router = useRouter()
 
   const onMemberClick = () => {
-    if (member.id === currentMember.id) return
+    if (member.id === currentMember.id) {
+      return;
+    }
 
-    router.push(`/servers/${params?.serverId}/conversations/${member.id}`)
+    router.push(`/servers/${params?.serverId}/conversations/${member.id}`);
   }
 
   useEffect(() => {
