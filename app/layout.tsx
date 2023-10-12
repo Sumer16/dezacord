@@ -20,6 +20,9 @@ const font = Open_Sans({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Dezacord | A Discord Clone',
   description: 'Dezacord application is a clone of the discord website developed using NextJS 13.4, Tailwind, SocketIO & MySQl',
+  manifest: '/manifest.json',
+  icons: { apple: '/icon.png' },
+  themeColor: '#6366f1',
 }
 
 export default function RootLayout({

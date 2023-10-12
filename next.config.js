@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const withPWA = require('next-pwa');
+
 const nextConfig = {
   webpack: (config) => {
     config.externals.push({
@@ -13,7 +15,12 @@ const nextConfig = {
       "uploadthing.com",
       "utfs.io"
     ]
-  }
+  },
+  ...withPWA({
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+  })
 }
 
 module.exports = nextConfig
