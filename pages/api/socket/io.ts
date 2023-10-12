@@ -13,7 +13,7 @@ import { NextApiResponseServerIo } from "@/types"
 // Turn off body parser for this route
 export const config = {
   api: {
-    bodyParser: false
+    bodyParser: false,
   },
 }
 
@@ -23,12 +23,13 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
     const httpServer: NetServer = res.socket.server as any
     const io = new ServerIO(httpServer, {
       path: path,
+      // @ts-ignore
       addTrailingSlash: false,
-    })
-    res.socket.server.io = io
+    });
+    res.socket.server.io = io;
   }
 
-  res.end()
+  res.end();
 }
 
 export default ioHandler
