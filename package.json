@@ -67,5 +67,9 @@
   "devDependencies": {
     "@types/uuid": "^9.0.4",
     "prisma": "^5.4.1"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.7",
+    "utf-8-validate": "^5.0.10"
   }
 }

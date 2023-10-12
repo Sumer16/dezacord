@@ -37,6 +37,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
     // In local dev it points to localhost change this in production
     const socketInstance = new (ClientIO as any)(process.env.NEXT_PUBLIC_SITE_URL!, {
       path: "/api/socket/io",
+      // @ts-ignore
       addTrailingSlash: false
     })
 
