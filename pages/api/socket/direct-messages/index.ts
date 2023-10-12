@@ -13,25 +13,26 @@ export default async function handler(
   res: NextApiResponseServerIo,
 ) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" })
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    const profile = await currentProfilePages(req)
-    const { content, fileUrl } = req.body
-    const { conversationId } = req.query
-
+    const profile = await currentProfilePages(req);
+    const { content, fileUrl } = req.body;
+    const { conversationId } = req.query;
+    
     if (!profile) {
-      return res.status(401).json({ error: "Unauthorized" })
+      return res.status(401).json({ error: "Unauthorized" });
     }    
-
+  
     if (!conversationId) {
-      return res.status(400).json({ error: "Conversation ID missing." })
+      return res.status(400).json({ error: "Conversation ID missing." });
+    }
+          
+    if (!content) {
+      return res.status(400).json({ error: "Content missing." });
     }
 
-    if (!content) {
-      return res.status(400).json({ error: "Content missing." })
-    }
 
     const conversation = await db.conversation.findFirst({
       where: {
@@ -64,14 +65,13 @@ export default async function handler(
     })
 
     if (!conversation) {
-      return res.status(404).json({ message: "Conversation not found" })
+      return res.status(404).json({ message: "Conversation not found" });
     }
 
-    // To decide we are Member1 or Member2
     const member = conversation.memberOne.profileId === profile.id ? conversation.memberOne : conversation.memberTwo
 
     if (!member) {
-      return res.status(404).json({ message: "Member not found" })
+      return res.status(404).json({ message: "Member not found" });
     }
 
     const message = await db.directMessage.create({
@@ -88,15 +88,15 @@ export default async function handler(
           }
         }
       }
-    })
+    });
 
-    const channelKey = `chat:${conversationId}:messages`
+    const channelKey = `chat:${conversationId}:messages`;
 
-    res?.socket?.server?.io?.emit(channelKey, message)
+    res?.socket?.server?.io?.emit(channelKey, message);
 
-    return res.status(200).json(message)
+    return res.status(200).json(message);
   } catch (error) {
-    console.log("[DIRECT_MESSAGES_POST]", error)
-    return res.status(500).json({ message: "Internal Error" }) 
+    console.log("[DIRECT_MESSAGES_POST]", error);
+    return res.status(500).json({ message: "Internal Error" }); 
   }
 }
