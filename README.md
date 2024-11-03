@@ -133,4 +133,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Credits
 
-- [CodeWithAntonio](https://www.codewithantonio.com/) => Thanks for making this amazing tutorial! You have always been a great teacher and a great inspiration for developing full-stack projects.
+- [CodeWithAntonio](https://www.codewithantonio.com/) => Thanks for making this amazing tutorial!
