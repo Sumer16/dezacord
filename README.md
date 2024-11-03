@@ -6,7 +6,7 @@
 ## About Dezacord
 
 This is a fully-functional real-time messaging application that mimics the functionalites of Discord. This application allows users to sign in/out, add/delete servers & channels, assign roles to users, communicate with multiple members in a channel and direct message members too. Along with these features users can also upload images & attachments in their channels/chats and video-stream with other members.
-This platform is built using Next.js 13.4, React, shadcn/ui, TailwindCSS, MySQL, PlanetScale, Prisma, Clerk, WebSockets, LiveKit, and more.
+This platform is built using Next.js 13.4, React, shadcn/ui, TailwindCSS, PostgreSQL, Supabase, Prisma, Clerk, WebSockets, LiveKit, and more.
 
 ## Key Features
 
@@ -23,8 +23,8 @@ This platform is built using Next.js 13.4, React, shadcn/ui, TailwindCSS, MySQL,
 - **Responsiveness:** Works flawlessly on both desktop and mobile devices
 - **Light & Dark Mode:** Choose your preferred viewing mode
 - **Websocket Fallback:** Ensures uninterrupted communication using polling
-- **Database & ORM:** MySQL for robustness & Prisma for database operations
-- **MySQL Database:** Utilize Planetscale for your MySQL database
+- **Database & ORM:** PostgreSQL for robustness & Prisma for database operations
+- **PostgreSQL Database:** Utilize Supabase for your PostgreSQL database
 - **Authentication:** Secured the app using Clerk Auth
 
 ## Installation
@@ -80,6 +80,8 @@ Add MySQL Database (I used PlanetScale, you can use any of your own choice):
 npx prisma generate
 npx prisma db push
 ```
+
+NOTE: I migrated my database from PlanetScale to Supabase. The steps to migrate is very simple for MySQL to PostgreSQL. Check the docs.
 
 ### Run the development server
 
