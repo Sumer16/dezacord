@@ -3,6 +3,8 @@
 
 ![Dezacord Landing Page](/dezacord.png)
 
+### NOTE: This project is no longer maintained.
+
 ## About Dezacord
 
 This is a fully-functional real-time messaging application that mimics the functionalites of Discord. This application allows users to sign in/out, add/delete servers & channels, assign roles to users, communicate with multiple members in a channel and direct message members too. Along with these features users can also upload images & attachments in their channels/chats and video-stream with other members.
